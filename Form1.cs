@@ -40,6 +40,88 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             this.SetStyle(ControlStyles.ResizeRedraw, true);
 
         }
+
+        // Event for coordinate received
+        public event Action<double, double> PointReceived;
+
+        // Event handler for coordinate input submission
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double x, y;
+                bool xParsed = false;
+                bool yParsed = false;
+
+                // Try parsing X coordinate with both InvariantCulture and CurrentCulture
+                // This supports both dot and comma as decimal separators
+                if (!double.TryParse(txtX.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out x))
+                {
+                    if (!double.TryParse(txtX.Text, NumberStyles.Float, CultureInfo.CurrentCulture, out x))
+                    {
+                        xParsed = false;
+                    }
+                    else
+                    {
+                        xParsed = true;
+                    }
+                }
+                else
+                {
+                    xParsed = true;
+                }
+
+                // Try parsing Y coordinate with both InvariantCulture and CurrentCulture
+                if (!double.TryParse(txtY.Text, NumberStyles.Float, CultureInfo.CurrentCulture, out y))
+                {
+                    if (!double.TryParse(txtY.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out y))
+                    {
+                        yParsed = false;
+                    }
+                    else
+                    {
+                        yParsed = true;
+                    }
+                }
+                else
+                {
+                    yParsed = true;
+                }
+
+                // Check if both coordinates were parsed successfully
+                if (!xParsed || !yParsed)
+                {
+                    MessageBox.Show(
+                        "กรุณาป้อนค่าพิกัด X และ Y ที่ถูกต้อง\nตัวอย่าง: 10.5 หรือ 10,5",
+                        "ข้อมูลไม่ถูกต้อง",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+
+                // Display the result
+                lblResult.Text = $"พิกัดที่รับ: X = {x}, Y = {y}";
+                lblResult.ForeColor = Color.Green;
+
+                // Raise the PointReceived event
+                PointReceived?.Invoke(x, y);
+
+                // Optional: Log success
+                System.Diagnostics.Debug.WriteLine($"Coordinates received: X={x}, Y={y}");
+            }
+            catch (Exception ex)
+            {
+                // Handle any unexpected exceptions
+                MessageBox.Show(
+                    $"เกิดข้อผิดพลาด: {ex.Message}",
+                    "ข้อผิดพลาด",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                System.Diagnostics.Debug.WriteLine($"Error in BtnSubmit_Click: {ex}");
+            }
+        }
         
         protected override void WndProc(ref Message m)
         {

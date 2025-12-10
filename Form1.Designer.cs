@@ -117,6 +117,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtX = new System.Windows.Forms.TextBox();
+            this.txtY = new System.Windows.Forms.TextBox();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblX = new System.Windows.Forms.Label();
+            this.lblY = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -886,11 +892,67 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             this.label1.TabIndex = 51;
             this.label1.Text = "SCALE FACTOR";
             // 
+            // lblX
+            // 
+            this.lblX.AutoSize = true;
+            this.lblX.Location = new System.Drawing.Point(660, 67);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(17, 13);
+            this.lblX.TabIndex = 52;
+            this.lblX.Text = "X:";
+            // 
+            // txtX
+            // 
+            this.txtX.Location = new System.Drawing.Point(683, 64);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(80, 20);
+            this.txtX.TabIndex = 53;
+            // 
+            // lblY
+            // 
+            this.lblY.AutoSize = true;
+            this.lblY.Location = new System.Drawing.Point(769, 67);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(17, 13);
+            this.lblY.TabIndex = 54;
+            this.lblY.Text = "Y:";
+            // 
+            // txtY
+            // 
+            this.txtY.Location = new System.Drawing.Point(792, 64);
+            this.txtY.Name = "txtY";
+            this.txtY.Size = new System.Drawing.Size(80, 20);
+            this.txtY.TabIndex = 55;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(683, 90);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(189, 23);
+            this.btnSubmit.TabIndex = 56;
+            this.btnSubmit.Text = "ยืนยันพิกัด";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Location = new System.Drawing.Point(680, 120);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 13);
+            this.lblResult.TabIndex = 57;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 461);
+            this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtY);
+            this.Controls.Add(this.lblY);
+            this.Controls.Add(this.txtX);
+            this.Controls.Add(this.lblX);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.ToolStrip1);
             this.Controls.Add(this.label1);
@@ -1016,6 +1078,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
         private Label label1;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aBOUTToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtX;
+        private System.Windows.Forms.TextBox txtY;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblX;
+        private System.Windows.Forms.Label lblY;
     }
 }
 
