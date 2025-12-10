@@ -4695,10 +4695,10 @@ Local d=T*Global d                  |Global d= TT*d local
 
 
 
-                    x1[i] = (Convert.ToDouble(parts_split_comma[1]));
-                    y1[i] = (Convert.ToDouble(parts_split_comma[2]));
-                    x2[i] = (Convert.ToDouble(parts_split_comma[3]));
-                    y2[i] = (Convert.ToDouble(parts_split_comma[4]));
+                    x1[i] = (InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[1]));
+                    y1[i] = (InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[2]));
+                    x2[i] = (InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[3]));
+                    y2[i] = (InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[4]));
 
 
 
@@ -4811,10 +4811,10 @@ Local d=T*Global d                  |Global d= TT*d local
                     line temp11 = new line();
 
 
-                    temp11.StartPoint.X = (float)(Convert.ToDouble(parts_split_comma[1]) * GridX);
-                    temp11.StartPoint.Y = (float)(Convert.ToDouble(parts_split_comma[2]) * GridX);
-                    temp11.EndPoint.X = (float)(Convert.ToDouble(parts_split_comma[3]) * GridX);
-                    temp11.EndPoint.Y = (float)(Convert.ToDouble(parts_split_comma[4]) * GridX);
+                    temp11.StartPoint.X = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[1]) * GridX);
+                    temp11.StartPoint.Y = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[2]) * GridX);
+                    temp11.EndPoint.X = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[3]) * GridX);
+                    temp11.EndPoint.Y = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[4]) * GridX);
                     mLinesW.Add(temp11);
                     temp11 = null;
 
@@ -4963,10 +4963,10 @@ Local d=T*Global d                  |Global d= TT*d local
 
                         line temp = new line();
 
-                        temp.StartPoint.X = (float)(Convert.ToDouble(parts_split_comma[1]) * GridX);
-                        temp.StartPoint.Y = -(float)(Convert.ToDouble(parts_split_comma[2]) * GridX) + 16 * GridX;
-                        temp.EndPoint.X = (float)(Convert.ToDouble(parts_split_comma[3]) * GridX);
-                        temp.EndPoint.Y = -(float)(Convert.ToDouble(parts_split_comma[4]) * GridX) + 16 * GridX;
+                        temp.StartPoint.X = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[1]) * GridX);
+                        temp.StartPoint.Y = -(float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[2]) * GridX) + 16 * GridX;
+                        temp.EndPoint.X = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[3]) * GridX);
+                        temp.EndPoint.Y = -(float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[4]) * GridX) + 16 * GridX;
 
 
 
@@ -5311,10 +5311,10 @@ Local d=T*Global d                  |Global d= TT*d local
 
 
 
-                    x1[i] = (Convert.ToDouble(parts_split_comma[1]));
-                    y1[i] = (Convert.ToDouble(parts_split_comma[2]));
-                    x2[i] = (Convert.ToDouble(parts_split_comma[3]));
-                    y2[i] = (Convert.ToDouble(parts_split_comma[4]));
+                    x1[i] = (InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[1]));
+                    y1[i] = (InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[2]));
+                    x2[i] = (InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[3]));
+                    y2[i] = (InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[4]));
 
 
 
@@ -5625,10 +5625,10 @@ Local d=T*Global d                  |Global d= TT*d local
 
 
 
-                        temp.StartPoint.X = (float)((Convert.ToDouble(parts_split_comma[1]) + (42 - right + left) / 2 - left) * GridX);
-                        temp.StartPoint.Y = -(float)(Convert.ToDouble(parts_split_comma[2]) * GridX) + (top + 2) * GridX;
-                        temp.EndPoint.X = (float)((Convert.ToDouble(parts_split_comma[3]) + (42 - right + left) / 2 - left) * GridX);
-                        temp.EndPoint.Y = -(float)((Convert.ToDouble(parts_split_comma[4])) * GridX) + (top + 2) * GridX;
+                        temp.StartPoint.X = (float)((InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[1]) + (42 - right + left) / 2 - left) * GridX);
+                        temp.StartPoint.Y = -(float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[2]) * GridX) + (top + 2) * GridX;
+                        temp.EndPoint.X = (float)((InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[3]) + (42 - right + left) / 2 - left) * GridX);
+                        temp.EndPoint.Y = -(float)((InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[4])) * GridX) + (top + 2) * GridX;
 
 
                         mLines.Add(temp);
@@ -18754,10 +18754,10 @@ M3,0.0225,4.21875E-05,200000000";
                     line temp11 = new line();
 
 
-                    temp11.StartPoint.X = (float)(Convert.ToDouble(parts_split_comma[1]) * GridX);
-                    temp11.StartPoint.Y = (float)(Convert.ToDouble(parts_split_comma[2]) * GridX);
-                    temp11.EndPoint.X = (float)(Convert.ToDouble(parts_split_comma[3]) * GridX);
-                    temp11.EndPoint.Y = (float)(Convert.ToDouble(parts_split_comma[4]) * GridX);
+                    temp11.StartPoint.X = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[1]) * GridX);
+                    temp11.StartPoint.Y = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[2]) * GridX);
+                    temp11.EndPoint.X = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[3]) * GridX);
+                    temp11.EndPoint.Y = (float)(InputParsingHelpers.ParseDoubleOrDefault(parts_split_comma[4]) * GridX);
                     mLinesW.Add(temp11);
                     temp11 = null;
 

@@ -102,7 +102,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 return;
             }
 
-            Form1.Support_Displacement_S[Form1.nodenumer_Selected] = Form1.nodenumer_Selected.ToString() + "," + (InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""))).ToString() + "," + (InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""))).ToString();
+            Form1.Support_Displacement_S[Form1.nodenumer_Selected] = Form1.nodenumer_Selected.ToString() + "," + InputParsingHelpers.FormatDouble(InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""))) + "," + InputParsingHelpers.FormatDouble(InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", "")));
             Debug.Print(" Form1.Support_Displacement_S[Form1.nodenumer_Selected]= " + Form1.Support_Displacement_S[Form1.nodenumer_Selected]);
 
 
