@@ -1,0 +1,81 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                 Graphical 2D Frame Analysis - Form1 Layout                  ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║  [File] [Edit] [View] [Analysis] [Help]                                    ║
+║  ┌────────────────────────────────────────────────────────────────────────┐ ║
+║  │ [Zoom +] [Zoom -] [Pan] [Select] ...                                   │ ║
+║  └────────────────────────────────────────────────────────────────────────┘ ║
+║                                                                              ║
+║  [Read File] [SHOW EXAMPLE] [Draw_DOF] [Model View]          X: [_______]  ║
+║  [File Save] [Show Output]  [Run]      [Show Graph]          Y: [_______]  ║
+║                                                 SCALE FACTOR  [ยืนยันพิกัด] ║
+║                                                               Result: ____   ║
+║                                                                              ║
+║  ┌────────────────────────────────────────────────────────────────────────┐ ║
+║  │                                                                         │ ║
+║  │                                                                         │ ║
+║  │                     Canvas / Drawing Area                               │ ║
+║  │                     (PictureBox1)                                       │ ║
+║  │                                                                         │ ║
+║  │                                                                         │ ║
+║  │                                                                         │ ║
+║  └────────────────────────────────────────────────────────────────────────┘ ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+NEW CONTROLS ADDED (Top Right Corner):
+=====================================
+
+1. lblX (Label)
+   - Location: (660, 67)
+   - Text: "X:"
+   - Purpose: Label for X coordinate input
+
+2. txtX (TextBox)
+   - Location: (683, 64)
+   - Size: 80x20
+   - Purpose: Input field for X coordinate
+   - Accepts: Numbers with . or , as decimal separator
+
+3. lblY (Label)
+   - Location: (769, 67)
+   - Text: "Y:"
+   - Purpose: Label for Y coordinate input
+
+4. txtY (TextBox)
+   - Location: (792, 64)
+   - Size: 80x20
+   - Purpose: Input field for Y coordinate
+   - Accepts: Numbers with . or , as decimal separator
+
+5. btnSubmit (Button)
+   - Location: (683, 90)
+   - Size: 189x23
+   - Text: "ยืนยันพิกัด" (Confirm Coordinates)
+   - Purpose: Submit button to validate and process coordinates
+
+6. lblResult (Label)
+   - Location: (680, 120)
+   - Text: (Dynamic - shows result after submission)
+   - Purpose: Display success/result message
+   - Color: Green (on success)
+
+LAYOUT NOTES:
+=============
+- Controls are positioned in the upper right corner
+- Do not overlap with existing functionality
+- Aligned vertically for better UX
+- Total width: ~192 pixels
+- Total height: ~60 pixels
+- Tab order: txtX → txtY → btnSubmit
+
+INTERACTION FLOW:
+=================
+1. User enters X coordinate in txtX (e.g., "10.5" or "10,5")
+2. User enters Y coordinate in txtY (e.g., "20.5" or "20,5")
+3. User clicks "ยืนยันพิกัด" button
+4. System validates input
+5. On success: lblResult shows "พิกัดที่รับ: X = 10.5, Y = 20.5" (green)
+6. On failure: MessageBox shows error in Thai
+7. PointReceived event is raised with (x, y) values
