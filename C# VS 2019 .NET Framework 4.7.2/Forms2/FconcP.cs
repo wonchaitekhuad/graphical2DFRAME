@@ -1,4 +1,4 @@
-﻿using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
 using System;
 using System.Drawing;
 using System.Diagnostics;
@@ -152,11 +152,11 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                     }
 
 
-                    textBox1.Text = (double.Parse(test[1].Replace(" ", ""))).ToString();
+                    textBox1.Text = (InputParsingHelpers.ParseDoubleOrDefault(test[1].Replace(" ", ""), 0)).ToString();
                     textBox2.Text = test[2];
-                    textBox3.Text = (double.Parse(test[3].Replace(" ", ""))).ToString();
+                    textBox3.Text = (InputParsingHelpers.ParseDoubleOrDefault(test[3].Replace(" ", ""), 0)).ToString();
                     textBox4.Text = test[4];
-                    textBox5.Text = (double.Parse(test[5].Replace(" ", ""))).ToString();
+                    textBox5.Text = (InputParsingHelpers.ParseDoubleOrDefault(test[5].Replace(" ", ""), 0)).ToString();
                     textBox6.Text = test[6];
                 }
 
@@ -235,39 +235,39 @@ try
 
             d = Form1.L_n(Form1.Last_index_line_selected + 1);
 
-            if (double.Parse(t1) == 0)
+            if (InputParsingHelpers.ParseDoubleOrDefault(t1, 0) == 0)
             {
                 MessageBox.Show(" CONC LOAD P1 must be GRATER THAN ZERO !!!");
                 return;
             }
 
-            if (double.Parse(t1) != 0 & (double.Parse(t2) >= d | double.Parse(t2) == 0))
+            if (InputParsingHelpers.ParseDoubleOrDefault(t1, 0) != 0 & (InputParsingHelpers.ParseDoubleOrDefault(t2, 0) >= d | InputParsingHelpers.ParseDoubleOrDefault(t2, 0) == 0))
             {
                 MessageBox.Show(" Distance must be MORE than ZERO or LESS than BEAM LENGTH!!!");
                 return;
             }
-            if (double.Parse(t3) != 0 & (double.Parse(t4) >= d | double.Parse(t4) == 0))
+            if (InputParsingHelpers.ParseDoubleOrDefault(t3, 0) != 0 & (InputParsingHelpers.ParseDoubleOrDefault(t4, 0) >= d | InputParsingHelpers.ParseDoubleOrDefault(t4, 0) == 0))
             {
                 MessageBox.Show(" Distance must be MORE than ZERO or LESS than BEAM LENGTH!!!");
                 return;
             }
-            if (double.Parse(t5) != 0 & (double.Parse(t6) >= d | double.Parse(t6) == 0))
+            if (InputParsingHelpers.ParseDoubleOrDefault(t5, 0) != 0 & (InputParsingHelpers.ParseDoubleOrDefault(t6, 0) >= d | InputParsingHelpers.ParseDoubleOrDefault(t6, 0) == 0))
             {
                 MessageBox.Show(" Distance must be MORE than ZERO or LESS than BEAM LENGTH!!!");
                 return;
             }
-            if (double.Parse(t2) != 0 & double.Parse(t4) != 0 & double.Parse(t6) != 0)
+            if (InputParsingHelpers.ParseDoubleOrDefault(t2, 0) != 0 & InputParsingHelpers.ParseDoubleOrDefault(t4, 0) != 0 & InputParsingHelpers.ParseDoubleOrDefault(t6, 0) != 0)
             {
-                if ((double.Parse(t2) != double.Parse(t4)) & (double.Parse(t4) != double.Parse(t6)) & (double.Parse(t6) != double.Parse(t2)))
+                if ((InputParsingHelpers.ParseDoubleOrDefault(t2, 0) != InputParsingHelpers.ParseDoubleOrDefault(t4, 0)) & (InputParsingHelpers.ParseDoubleOrDefault(t4, 0) != InputParsingHelpers.ParseDoubleOrDefault(t6, 0)) & (InputParsingHelpers.ParseDoubleOrDefault(t6, 0) != InputParsingHelpers.ParseDoubleOrDefault(t2, 0)))
                 {
 
 
                 }
                 else
                 {
-                    Debug.Print("11" + (double.Parse(t2) != double.Parse(t4)));
-                    Debug.Print("12" + (double.Parse(t4) != double.Parse(t6)));
-                    Debug.Print("13" + (double.Parse(t6) != double.Parse(t2)));
+                    Debug.Print("11" + (InputParsingHelpers.ParseDoubleOrDefault(t2, 0) != InputParsingHelpers.ParseDoubleOrDefault(t4, 0)));
+                    Debug.Print("12" + (InputParsingHelpers.ParseDoubleOrDefault(t4, 0) != InputParsingHelpers.ParseDoubleOrDefault(t6, 0)));
+                    Debug.Print("13" + (InputParsingHelpers.ParseDoubleOrDefault(t6, 0) != InputParsingHelpers.ParseDoubleOrDefault(t2, 0)));
                     MessageBox.Show(" CONC LOAD must be NOT ON SAME POINT!!!");
                     return;
                 }
@@ -310,11 +310,11 @@ try
 
 
                 test[0] = (Form1.Last_index_line_selected + 1).ToString();
-                test[1] = (fac * double.Parse(t1.Replace(" ", ""))).ToString();
+                test[1] = (fac * InputParsingHelpers.ParseDoubleOrDefault(t1.Replace(" ", ""), 0)).ToString();
                 test[2] = t2;
-                test[3] = (fac * double.Parse(t3.Replace(" ", ""))).ToString();
+                test[3] = (fac * InputParsingHelpers.ParseDoubleOrDefault(t3.Replace(" ", ""), 0)).ToString();
                 test[4] = t4;
-                test[5] = (fac * double.Parse(t5.Replace(" ", ""))).ToString();
+                test[5] = (fac * InputParsingHelpers.ParseDoubleOrDefault(t5.Replace(" ", ""), 0)).ToString();
                 test[6] = t6;
                 test[13] = Pload2_Direction;
 

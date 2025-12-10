@@ -70,27 +70,26 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             if (textBox1.Text.Replace(" ", "") == "") textBox1.Text = "0";
             if (textBox2.Text.Replace(" ", "") == "") textBox2.Text = "0";
             if (textBox3.Text.Replace(" ", "") == "") textBox3.Text = "0";
-            if (double.Parse(textBox1.Text.Replace(" ", "")) == 0)
+            
+            double t1 = InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0);
+            double t2 = InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0);
+            double t3 = InputParsingHelpers.ParseDoubleOrDefault(textBox3.Text.Replace(" ", ""), 0);
+            
+            if (t1 == 0)
             {
                 MessageBox.Show(" Area must not be ZERO !!!");
                 return;
             }
-            if (double.Parse(textBox2.Text.Replace(" ", "")) == 0)
+            if (t2 == 0)
             {
                 MessageBox.Show(" Iz must not be ZERO !!!");
                 return;
             }
-            if (double.Parse(textBox3.Text.Replace(" ", "")) == 0)
+            if (t3 == 0)
             {
                 MessageBox.Show(" E must not be ZERO !!!");
                 return;
             }
-
-
-
-            double t1 = double.Parse(textBox1.Text.Replace(" ", ""));
-            double t2 = double.Parse(textBox2.Text.Replace(" ", ""));
-            double t3 = double.Parse(textBox3.Text.Replace(" ", ""));
             Form1.Mproperty_A_I_E[Form1.Last_index_line_selected + 1] = (Form1.Last_index_line_selected + 1).ToString() + "," + t1 + "," + t2 + "," + t3;
 
             for (int k = 1; k <= Form1.totalmember; k++)
@@ -121,9 +120,9 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
                     }
 
-                    Form1.Ayz[i] = double.Parse(test[1]);
-                    Form1.Iz[i] = double.Parse(test[2]);
-                    Form1.Ey[i] = double.Parse(test[3]);
+                    Form1.Ayz[i] = InputParsingHelpers.ParseDoubleOrDefault(test[1], 0);
+                    Form1.Iz[i] = InputParsingHelpers.ParseDoubleOrDefault(test[2], 0);
+                    Form1.Ey[i] = InputParsingHelpers.ParseDoubleOrDefault(test[3], 0);
 
 
                 }
@@ -159,12 +158,14 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             {
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
+            // Allow digits, control chars, dot, and comma (for international decimal input)
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.'))
+                    && (e.KeyChar != '.') && (e.KeyChar != ','))
                 e.Handled = true;
 
-            // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            // only allow one decimal separator (dot or comma)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -179,12 +180,14 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             {
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
+            // Allow digits, control chars, dot, and comma (for international decimal input)
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.'))
+                    && (e.KeyChar != '.') && (e.KeyChar != ','))
                 e.Handled = true;
 
-            // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            // only allow one decimal separator (dot or comma)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -198,12 +201,14 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             {
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
+            // Allow digits, control chars, dot, and comma (for international decimal input)
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.'))
+                    && (e.KeyChar != '.') && (e.KeyChar != ','))
                 e.Handled = true;
 
-            // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            // only allow one decimal separator (dot or comma)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -218,27 +223,26 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             if (textBox1.Text.Replace(" ", "") == "") textBox1.Text = "0";
             if (textBox2.Text.Replace(" ", "") == "") textBox2.Text = "0";
             if (textBox3.Text.Replace(" ", "") == "") textBox3.Text = "0";
-            if (double.Parse(textBox1.Text.Replace(" ", "")) == 0)
+            
+            double t1 = InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0);
+            double t2 = InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0);
+            double t3 = InputParsingHelpers.ParseDoubleOrDefault(textBox3.Text.Replace(" ", ""), 0);
+            
+            if (t1 == 0)
             {
                 MessageBox.Show(" Area must not be ZERO !!!");
                 return;
             }
-            if (double.Parse(textBox2.Text.Replace(" ", "")) == 0)
+            if (t2 == 0)
             {
                 MessageBox.Show(" Iz must not be ZERO !!!");
                 return;
             }
-            if (double.Parse(textBox3.Text.Replace(" ", "")) == 0)
+            if (t3 == 0)
             {
                 MessageBox.Show(" E must not be ZERO !!!");
                 return;
             }
-
-
-
-            double t1 = double.Parse(textBox1.Text.Replace(" ", ""));
-            double t2 = double.Parse(textBox2.Text.Replace(" ", ""));
-            double t3 = double.Parse(textBox3.Text.Replace(" ", ""));
 
             for (int k = 1; k <= Form1.totalmember; k++)
             {

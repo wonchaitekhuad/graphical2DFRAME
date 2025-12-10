@@ -1,4 +1,4 @@
-﻿using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
 using System;
 using System.Drawing;
 using System.Diagnostics;
@@ -122,20 +122,20 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             if (textBox2.Text.Replace(" ", "") == "") textBox2.Text = "0";
 
 
-            if (double.Parse(textBox1.Text.Replace(" ", "")) == 0)
+            if (InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0) == 0)
             {
                 MessageBox.Show(" CONC MOMENT Z M must not be ZERO !!!");
                 return;
             }
 
-            if (double.Parse(textBox2.Text.Replace(" ", "")) <= 0)
+            if (InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0) <= 0)
             {
                 MessageBox.Show(" Distance d1 of M from startNode must not be ZERO or NEGATIVE !!!");
                 return;
             }
 
 
-            if (double.Parse(textBox2.Text.Replace(" ", "")) >= Form1.L_n(Form1.Last_index_line_selected + 1))
+            if (InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0) >= Form1.L_n(Form1.Last_index_line_selected + 1))
             {
                 double c = Form1.L_n(Form1.Last_index_line_selected + 1);
                 MessageBox.Show(" Distance d1 of M from startNode must be less than BEAM LENGTH " + c + " m!!!");
@@ -154,8 +154,8 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 }
                 Debug.Print(" Form1.Pload2[Form1.Last_index_line_selected + 1]= " + Form1.Pload2[Form1.Last_index_line_selected + 1]);
                 double M, d1;
-                M = double.Parse(textBox1.Text.Replace(" ", ""));
-                d1 = double.Parse(textBox2.Text.Replace(" ", ""));
+                M = InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0);
+                d1 = InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0);
                 Debug.Print(" MMMMMMMMMMMMMMMMMMMM =" + (-1 * M) + ", " + d1);//it will be opp sign
 
                 test[11] = (M).ToString();
@@ -239,7 +239,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
                     }
 
-                    textBox1.Text = (double.Parse(test[11].Replace(" ", ""))).ToString();
+                    textBox1.Text = (InputParsingHelpers.ParseDoubleOrDefault(test[11].Replace(" ", ""), 0)).ToString();
                     textBox2.Text = test[12];
                 }
 

@@ -1,4 +1,4 @@
-﻿using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
 using System;
 using System.Drawing;
 using System.Diagnostics;
@@ -236,8 +236,8 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
 
             //double qaz = Form1.Ayz[mid];
-            //Iz[i] = double.Parse(test[2]);
-            //Ey[i] = double.Parse(test[3]);
+            //Iz[i] = InputParsingHelpers.ParseDoubleOrDefault(test[2], 0);
+            //Ey[i] = InputParsingHelpers.ParseDoubleOrDefault(test[3], 0);
 
             label1.Text ="Member No.= "+mid+ ", START Node is : " + Find_Node_Num_From_Coordinate(Form1.mLines[mid - 1].StartPoint) + "," + "END Node is : " + Find_Node_Num_From_Coordinate(Form1.mLines[mid - 1].EndPoint) + "," + " Material Property : " + " A = "+Form1.Ayz[mid] + ","+ " I = "+Form1.Ayz[mid] + ","+" E = "+Form1.Ey[mid] ;
 

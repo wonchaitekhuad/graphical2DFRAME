@@ -1,4 +1,4 @@
-﻿using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
 using System;
 using System.Drawing;
 using System.Diagnostics;
@@ -195,10 +195,10 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
 
                     }
-                    udl1 = double.Parse(test[7].Replace(" ", ""));
-                    udl2 = double.Parse(test[8].Replace(" ", ""));
-                    d1 = double.Parse(test[9].Replace(" ", ""));
-                    d2 = double.Parse(test[10].Replace(" ", ""));
+                    udl1 = InputParsingHelpers.ParseDoubleOrDefault(test[7].Replace(" ", ""), 0);
+                    udl2 = InputParsingHelpers.ParseDoubleOrDefault(test[8].Replace(" ", ""), 0);
+                    d1 = InputParsingHelpers.ParseDoubleOrDefault(test[9].Replace(" ", ""), 0);
+                    d2 = InputParsingHelpers.ParseDoubleOrDefault(test[10].Replace(" ", ""), 0);
 
 
                     textBox1.Text = (udl1).ToString();
@@ -279,8 +279,8 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             if (textBox3.Text.Replace(" ", "") == "") textBox3.Text = "0";
             if (textBox4.Text.Replace(" ", "") == "") textBox4.Text = "0";
 
-            udl1 = double.Parse(textBox1.Text.Replace(" ", ""));
-            udl2 = double.Parse(textBox3.Text.Replace(" ", ""));
+            udl1 = InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0);
+            udl2 = InputParsingHelpers.ParseDoubleOrDefault(textBox3.Text.Replace(" ", ""), 0);
 
             if (udl1 != 0 & udl2 != 0 & (Math.Abs(udl1) / udl1) * (Math.Abs(udl2) / udl2) == -1)
             {
@@ -288,7 +288,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 return;
             }
 
-            if (double.Parse(textBox1.Text.Replace(" ", "")) == 0 & double.Parse(textBox3.Text.Replace(" ", "")) == 0)
+            if (InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0) == 0 & InputParsingHelpers.ParseDoubleOrDefault(textBox3.Text.Replace(" ", ""), 0) == 0)
             {
                 MessageBox.Show(" UDL/Trap/Triangula LOAD W1 and W2 both must not be ZERO !!!");
                 return;
@@ -298,7 +298,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             
 
 
-            if (double.Parse(textBox2.Text.Replace(" ", "")) >= Form1.L_n(Form1.Last_index_line_selected + 1))
+            if (InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0) >= Form1.L_n(Form1.Last_index_line_selected + 1))
             {
                 double c = Form1.L_n(Form1.Last_index_line_selected + 1);
                 MessageBox.Show(" Distance d1 of W1 from startNode must be less than BEAM LENGTH " + c + " m!!!");
@@ -314,7 +314,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
 
 
-            if (double.Parse(textBox4.Text.Replace(" ", "")) > Form1.L_n(Form1.Last_index_line_selected + 1))
+            if (InputParsingHelpers.ParseDoubleOrDefault(textBox4.Text.Replace(" ", ""), 0) > Form1.L_n(Form1.Last_index_line_selected + 1))
             {
                 double c = Form1.L_n(Form1.Last_index_line_selected + 1);
                 MessageBox.Show(" Distance d2 of W2 from startNode must not exceed  BEAM LENGTH " + c + " m!!!");
@@ -322,7 +322,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 return;
             }
 
-            if (double.Parse(textBox2.Text.Replace(" ", "")) >= double.Parse(textBox4.Text.Replace(" ", "")))
+            if (InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0) >= InputParsingHelpers.ParseDoubleOrDefault(textBox4.Text.Replace(" ", ""), 0))
             {
                 MessageBox.Show(" Distance d2 of W2 must be greater than Distance d1 of W1 from startNode!!!");
                 return;
@@ -362,10 +362,10 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 }
                 Debug.Print(" Form1.Pload2[Form1.Last_index_line_selected + 1]= " + Form1.Pload2[Form1.Last_index_line_selected + 1]);
 
-                udl1 = double.Parse(textBox1.Text.Replace(" ", ""));
-                udl2 = double.Parse(textBox3.Text.Replace(" ", ""));
-                d1 = double.Parse(textBox2.Text.Replace(" ", ""));
-                d2 = double.Parse(textBox4.Text.Replace(" ", ""));
+                udl1 = InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0);
+                udl2 = InputParsingHelpers.ParseDoubleOrDefault(textBox3.Text.Replace(" ", ""), 0);
+                d1 = InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0);
+                d2 = InputParsingHelpers.ParseDoubleOrDefault(textBox4.Text.Replace(" ", ""), 0);
 
 
 
