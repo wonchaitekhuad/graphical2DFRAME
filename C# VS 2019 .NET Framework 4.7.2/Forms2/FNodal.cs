@@ -122,12 +122,14 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             {
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
+            // Allow digits, control keys, dot, comma, and minus as decimal separators
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.') && (e.KeyChar != ',') && (e.KeyChar != '-'))
                 e.Handled = true;
 
-
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            // only allow one decimal separator (dot or comma)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
