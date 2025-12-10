@@ -383,10 +383,10 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
 
 
-                test[7] = (fac * udl1).ToString();
-                test[9] = d1.ToString();
-                test[8] = (fac * udl2).ToString();
-                test[10] = d2.ToString();
+                test[7] = InputParsingHelpers.FormatDoubleInvariant(fac * udl1);
+                test[9] = InputParsingHelpers.FormatDoubleInvariant(d1);
+                test[8] = InputParsingHelpers.FormatDoubleInvariant(fac * udl2);
+                test[10] = InputParsingHelpers.FormatDoubleInvariant(d2);
                 test[13] = Pload2_Direction;
 
                 string changed = string.Join(",", test);
@@ -565,11 +565,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -586,11 +587,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -607,11 +609,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
         }
 
@@ -624,11 +627,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
         }
 

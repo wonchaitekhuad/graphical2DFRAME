@@ -90,7 +90,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 MessageBox.Show(" E must not be ZERO !!!");
                 return;
             }
-            Form1.Mproperty_A_I_E[Form1.Last_index_line_selected + 1] = (Form1.Last_index_line_selected + 1).ToString() + "," + t1 + "," + t2 + "," + t3;
+            Form1.Mproperty_A_I_E[Form1.Last_index_line_selected + 1] = (Form1.Last_index_line_selected + 1).ToString() + "," + InputParsingHelpers.FormatDoubleInvariant(t1) + "," + InputParsingHelpers.FormatDoubleInvariant(t2) + "," + InputParsingHelpers.FormatDoubleInvariant(t3);
 
             for (int k = 1; k <= Form1.totalmember; k++)
             {
@@ -247,7 +247,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             for (int k = 1; k <= Form1.totalmember; k++)
             {
 
-                Form1.Mproperty_A_I_E[k] = k.ToString() + "," + t1 + "," + t2 + "," + t3;
+                Form1.Mproperty_A_I_E[k] = k.ToString() + "," + InputParsingHelpers.FormatDoubleInvariant(t1) + "," + InputParsingHelpers.FormatDoubleInvariant(t2) + "," + InputParsingHelpers.FormatDoubleInvariant(t3);
 
                 Debug.Print("FBeamProp......Mproperty_A_I_E[k]= " + k.ToString() + "," + Form1.Mproperty_A_I_E[k]);
 

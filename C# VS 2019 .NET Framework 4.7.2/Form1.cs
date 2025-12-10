@@ -4282,7 +4282,7 @@ Local d=T*Global d                  |Global d= TT*d local
 
 
 
-                    result.Append("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
+                    result.Append("L" + (i + 1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx1) + "," + InputParsingHelpers.FormatDoubleInvariant(yy1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx2) + "," + InputParsingHelpers.FormatDoubleInvariant(yy2));
                     result.AppendLine();
                 }
             }
@@ -5183,7 +5183,7 @@ Local d=T*Global d                  |Global d= TT*d local
 
                         Debug.Print("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
 
-                        result.Append("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
+                        result.Append("L" + (i + 1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx1) + "," + InputParsingHelpers.FormatDoubleInvariant(yy1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx2) + "," + InputParsingHelpers.FormatDoubleInvariant(yy2));
                         result.AppendLine();
                     }
                 }
@@ -17888,7 +17888,7 @@ Local d=T*Global d                  |Global d= TT*d local
 
                             Debug.Print("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
 
-                            result.Append("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
+                            result.Append("L" + (i + 1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx1) + "," + InputParsingHelpers.FormatDoubleInvariant(yy1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx2) + "," + InputParsingHelpers.FormatDoubleInvariant(yy2));
                             result.AppendLine();
                         }
                     }
@@ -17922,7 +17922,7 @@ Local d=T*Global d                  |Global d= TT*d local
                             yy1 = 16 - yy1 - bottom;
                             yy2 = 16 - yy2 - bottom;
 
-                            FileWriter.WriteLine("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
+                            FileWriter.WriteLine("L" + (i + 1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx1) + "," + InputParsingHelpers.FormatDoubleInvariant(yy1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx2) + "," + InputParsingHelpers.FormatDoubleInvariant(yy2));
                             Debug.Print(left + "," + bottom + "," + "L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
 
 
@@ -18822,7 +18822,7 @@ M3,0.0225,4.21875E-05,200000000";
                             yy2 = mLinesW[i].EndPoint.Y / GridX;
                             yy1 = 16 - yy1 + top - 2;
                             yy2 = 16 - yy2 + top - 2;
-                            FileWriter.WriteLine("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
+                            FileWriter.WriteLine("L" + (i + 1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx1) + "," + InputParsingHelpers.FormatDoubleInvariant(yy1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx2) + "," + InputParsingHelpers.FormatDoubleInvariant(yy2));
                             Debug.Print("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
                         }
                     }
@@ -18950,7 +18950,7 @@ M3,0.0225,4.21875E-05,200000000";
 
 
 
-                    result.Append("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
+                    result.Append("L" + (i + 1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx1) + "," + InputParsingHelpers.FormatDoubleInvariant(yy1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx2) + "," + InputParsingHelpers.FormatDoubleInvariant(yy2));
                     result.AppendLine();
                     Debug.Print("L Append " + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
                 }
@@ -20433,7 +20433,7 @@ M3,0.0225,4.21875E-05,200000000";
 
                             Debug.Print("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
 
-                            result.Append("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
+                            result.Append("L" + (i + 1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx1) + "," + InputParsingHelpers.FormatDoubleInvariant(yy1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx2) + "," + InputParsingHelpers.FormatDoubleInvariant(yy2));
                             result.AppendLine();
                         }
                     }
@@ -20467,7 +20467,7 @@ M3,0.0225,4.21875E-05,200000000";
                             yy1 = 16 - yy1 - bottom;
                             yy2 = 16 - yy2 - bottom;
 
-                            FileWriter.WriteLine("L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
+                            FileWriter.WriteLine("L" + (i + 1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx1) + "," + InputParsingHelpers.FormatDoubleInvariant(yy1) + "," + InputParsingHelpers.FormatDoubleInvariant(xx2) + "," + InputParsingHelpers.FormatDoubleInvariant(yy2));
                             Debug.Print(left + "," + bottom + "," + "L" + (i + 1) + "," + xx1 + "," + yy1 + "," + xx2 + "," + yy2);
 
 

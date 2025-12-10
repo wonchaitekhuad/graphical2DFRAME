@@ -310,12 +310,12 @@ try
 
 
                 test[0] = (Form1.Last_index_line_selected + 1).ToString();
-                test[1] = (fac * InputParsingHelpers.ParseDoubleOrDefault(t1.Replace(" ", ""), 0)).ToString();
-                test[2] = t2;
-                test[3] = (fac * InputParsingHelpers.ParseDoubleOrDefault(t3.Replace(" ", ""), 0)).ToString();
-                test[4] = t4;
-                test[5] = (fac * InputParsingHelpers.ParseDoubleOrDefault(t5.Replace(" ", ""), 0)).ToString();
-                test[6] = t6;
+                test[1] = InputParsingHelpers.FormatDoubleInvariant(fac * InputParsingHelpers.ParseDoubleOrDefault(t1.Replace(" ", ""), 0));
+                test[2] = InputParsingHelpers.FormatDoubleInvariant(InputParsingHelpers.ParseDoubleOrDefault(t2, 0));
+                test[3] = InputParsingHelpers.FormatDoubleInvariant(fac * InputParsingHelpers.ParseDoubleOrDefault(t3.Replace(" ", ""), 0));
+                test[4] = InputParsingHelpers.FormatDoubleInvariant(InputParsingHelpers.ParseDoubleOrDefault(t4, 0));
+                test[5] = InputParsingHelpers.FormatDoubleInvariant(fac * InputParsingHelpers.ParseDoubleOrDefault(t5.Replace(" ", ""), 0));
+                test[6] = InputParsingHelpers.FormatDoubleInvariant(InputParsingHelpers.ParseDoubleOrDefault(t6, 0));
                 test[13] = Pload2_Direction;
 
                 string changed = string.Join(",", test);
@@ -454,11 +454,12 @@ catch (FormatException)
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
             // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
             // only allow minus sign at the beginning
@@ -474,11 +475,12 @@ catch (FormatException)
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')))
                 e.Handled = true;
 
             // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
         }
@@ -539,11 +541,12 @@ catch (FormatException)
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
             // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
             // only allow minus sign at the beginning
@@ -560,11 +563,12 @@ catch (FormatException)
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
             // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
             // only allow minus sign at the beginning
@@ -581,11 +585,12 @@ catch (FormatException)
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')))
                 e.Handled = true;
 
             // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
         }
@@ -598,11 +603,12 @@ catch (FormatException)
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')))
                 e.Handled = true;
 
             // only allow one decimal point
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
         }

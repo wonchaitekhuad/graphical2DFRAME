@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -60,8 +60,16 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             if (textBox1.Text.Replace(" ", "") == "") textBox1.Text = "0";
             if (textBox2.Text.Replace(" ", "") == "") textBox2.Text = "0";
             if (textBox3.Text.Replace(" ", "") == "") textBox3.Text = "0";
-            Form1.PJoint2[Form1.nodenumer_Selected] = Form1.nodenumer_Selected.ToString() + "," + textBox1.Text
-                + "," + textBox2.Text + "," + textBox3.Text;
+            
+            // Parse and format with InvariantCulture for portable file format
+            double val1 = InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0);
+            double val2 = InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0);
+            double val3 = InputParsingHelpers.ParseDoubleOrDefault(textBox3.Text.Replace(" ", ""), 0);
+            
+            Form1.PJoint2[Form1.nodenumer_Selected] = Form1.nodenumer_Selected.ToString() + "," + 
+                InputParsingHelpers.FormatDoubleInvariant(val1) + "," + 
+                InputParsingHelpers.FormatDoubleInvariant(val2) + "," + 
+                InputParsingHelpers.FormatDoubleInvariant(val3);
 
 
             Form1.Invoke_Unselect();
@@ -123,11 +131,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -181,11 +190,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -201,11 +211,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -222,11 +233,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 

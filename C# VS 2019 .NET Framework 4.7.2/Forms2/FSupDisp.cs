@@ -37,11 +37,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -58,11 +59,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace((sender as TextBox).Text.Substring((sender as TextBox).SelectionStart, (sender as TextBox).SelectionLength), "");
             }
             if (!char.IsControl(e.KeyChar) && (!char.IsDigit(e.KeyChar))
-                    && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                    && (e.KeyChar != '.' && (e.KeyChar != ',')) && (e.KeyChar != '-'))
                 e.Handled = true;
 
 
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            if ((e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1))
                 e.Handled = true;
 
 
@@ -100,7 +102,9 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 return;
             }
 
-            Form1.Support_Displacement_S[Form1.nodenumer_Selected] = Form1.nodenumer_Selected.ToString() + "," + (InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0)).ToString() + "," + (InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0)).ToString();
+            Form1.Support_Displacement_S[Form1.nodenumer_Selected] = Form1.nodenumer_Selected.ToString() + "," + 
+                InputParsingHelpers.FormatDoubleInvariant(InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""), 0)) + "," + 
+                InputParsingHelpers.FormatDoubleInvariant(InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""), 0));
             Debug.Print(" Form1.Support_Displacement_S[Form1.nodenumer_Selected]= " + Form1.Support_Displacement_S[Form1.nodenumer_Selected]);
 
 
