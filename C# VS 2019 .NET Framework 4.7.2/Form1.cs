@@ -44,49 +44,56 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
         }
         
+        // Helper method to parse coordinate with multiple decimal separator strategies
+        private bool TryParseCoordinate(string input, out double result)
+        {
+            result = 0;
+            bool parsed = false;
+            
+            input = input.Trim();
+            
+            // Strategy 1: Try with InvariantCulture (dot as decimal separator)
+            parsed = double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
+            
+            if (!parsed)
+            {
+                // Strategy 2: Try with CurrentCulture
+                parsed = double.TryParse(input, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+            }
+            
+            if (!parsed && input.Contains(","))
+            {
+                // Strategy 3: Replace comma with dot and try again
+                string inputWithDot = input.Replace(",", ".");
+                parsed = double.TryParse(inputWithDot, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
+            }
+            
+            return parsed;
+        }
+        
         // Event handler for coordinate submission
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
             string xInput = txtX.Text.Trim();
             string yInput = txtY.Text.Trim();
             
+            // Check for empty input first
+            if (string.IsNullOrWhiteSpace(xInput) || string.IsNullOrWhiteSpace(yInput))
+            {
+                MessageBox.Show(
+                    "กรุณากรอกพิกัด X และ Y\nโปรดระบุค่าทั้งสองช่อง",
+                    "ข้อมูลไม่ครบถ้วน",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+            
             double x, y;
-            bool xParsed = false;
-            bool yParsed = false;
             
-            // Try to parse X coordinate with multiple strategies
-            // Strategy 1: Try with InvariantCulture (dot as decimal separator)
-            xParsed = double.TryParse(xInput, NumberStyles.Float, CultureInfo.InvariantCulture, out x);
-            
-            if (!xParsed)
-            {
-                // Strategy 2: Try with CurrentCulture
-                xParsed = double.TryParse(xInput, NumberStyles.Float, CultureInfo.CurrentCulture, out x);
-            }
-            
-            if (!xParsed && xInput.Contains(","))
-            {
-                // Strategy 3: Replace comma with dot and try again
-                string xInputWithDot = xInput.Replace(",", ".");
-                xParsed = double.TryParse(xInputWithDot, NumberStyles.Float, CultureInfo.InvariantCulture, out x);
-            }
-            
-            // Try to parse Y coordinate with multiple strategies
-            // Strategy 1: Try with InvariantCulture (dot as decimal separator)
-            yParsed = double.TryParse(yInput, NumberStyles.Float, CultureInfo.InvariantCulture, out y);
-            
-            if (!yParsed)
-            {
-                // Strategy 2: Try with CurrentCulture
-                yParsed = double.TryParse(yInput, NumberStyles.Float, CultureInfo.CurrentCulture, out y);
-            }
-            
-            if (!yParsed && yInput.Contains(","))
-            {
-                // Strategy 3: Replace comma with dot and try again
-                string yInputWithDot = yInput.Replace(",", ".");
-                yParsed = double.TryParse(yInputWithDot, NumberStyles.Float, CultureInfo.InvariantCulture, out y);
-            }
+            // Try to parse X and Y coordinates
+            bool xParsed = TryParseCoordinate(xInput, out x);
+            bool yParsed = TryParseCoordinate(yInput, out y);
             
             // Check if both coordinates were successfully parsed
             if (!xParsed || !yParsed)
