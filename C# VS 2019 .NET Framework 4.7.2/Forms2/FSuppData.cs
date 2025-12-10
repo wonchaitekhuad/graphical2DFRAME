@@ -27,7 +27,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
 
             if (textBox1.Text.Replace(" ", "") == "") textBox1.Text = "0";
-            Form1.SPRING_Constant = double.Parse(textBox1.Text.Replace(" ", ""));
+            Form1.SPRING_Constant = InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""));
 
             if (Form1.SPRING_Constant == 0 & radioButton6.Checked == true)
             {
@@ -37,7 +37,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 
             
             if (textBox2.Text.Replace(" ", "") == "") textBox2.Text = "0";
-            Form1.Inc_Supp_angle_base_AND_GX = double.Parse(textBox2.Text);
+            Form1.Inc_Supp_angle_base_AND_GX = InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text);
 
             if (Form1.Inc_Supp_angle_base_AND_GX == 0 & radioButton7.Checked == true)
             {

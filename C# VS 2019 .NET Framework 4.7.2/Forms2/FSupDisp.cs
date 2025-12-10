@@ -83,12 +83,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             
             if (textBox1.Text.Replace(" ", "") == "") textBox1.Text = "0";
             if (textBox2.Text.Replace(" ", "") == "") textBox2.Text = "0";
-            if (Math.Abs(double.Parse(textBox1.Text.Replace(" ", ""))) > 0.3)
+            if (Math.Abs(InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""))) > 0.3)
             {
                 MessageBox.Show("Support_Displacement must not exceed 0.3M !!!");
                 return;
             }
-            if (Math.Abs(double.Parse(textBox2.Text.Replace(" ", ""))) > 0.3)
+            if (Math.Abs(InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""))) > 0.3)
             {
                 MessageBox.Show("Support_Displacement must not exceed 0.3M !!!");
                 return;
@@ -100,7 +100,7 @@ namespace Graphical_2D_Frame_Analysis_CSharp
                 return;
             }
 
-            Form1.Support_Displacement_S[Form1.nodenumer_Selected] = Form1.nodenumer_Selected.ToString() + "," + (double.Parse(textBox1.Text.Replace(" ", ""))).ToString() + "," + (double.Parse(textBox2.Text.Replace(" ", ""))).ToString();
+            Form1.Support_Displacement_S[Form1.nodenumer_Selected] = Form1.nodenumer_Selected.ToString() + "," + (InputParsingHelpers.ParseDoubleOrDefault(textBox1.Text.Replace(" ", ""))).ToString() + "," + (InputParsingHelpers.ParseDoubleOrDefault(textBox2.Text.Replace(" ", ""))).ToString();
             Debug.Print(" Form1.Support_Displacement_S[Form1.nodenumer_Selected]= " + Form1.Support_Displacement_S[Form1.nodenumer_Selected]);
 
 

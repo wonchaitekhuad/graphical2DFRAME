@@ -468,8 +468,8 @@ Local d=T*Global d                  |Global d= TT*d local
                         }
 
 
-                        dispx = InputParsingHelpers.ParseDoubleOrDefault(test9[1]);
-                        dispy = InputParsingHelpers.ParseDoubleOrDefault(test9[2]);
+                        dispx = double.Parse(test9[1]);
+                        dispy = double.Parse(test9[2]);
 
 
                     }
@@ -627,8 +627,8 @@ Local d=T*Global d                  |Global d= TT*d local
                     {
                         Inclied_Supp_Node_num = int.Parse(testx[0]);
 
-                        Inc_Supp_angle_base_AND_GX = InputParsingHelpers.ParseDoubleOrDefault(testx[2]);
-                        if (InputParsingHelpers.ParseDoubleOrDefault(Theta(midx).ToString("0.00")) - Inc_Supp_angle_base_AND_GX <= 0.2)
+                        Inc_Supp_angle_base_AND_GX = double.Parse(testx[2]);
+                        if (double.Parse(Theta(midx).ToString("0.00")) - Inc_Supp_angle_base_AND_GX <= 0.2)
                         {
                             bool_has_7 = true;
 
@@ -1072,20 +1072,20 @@ Local d=T*Global d                  |Global d= TT*d local
 
                     kk = int.Parse(test[0]);
 
-                    Pcn_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[1]);
-                    Xpcn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[2]);
-                    Pcn_2 = -InputParsingHelpers.ParseDoubleOrDefault(test[3]);
-                    Xpcn_2 = InputParsingHelpers.ParseDoubleOrDefault(test[4]);
-                    Pcn_3 = -InputParsingHelpers.ParseDoubleOrDefault(test[5]);
-                    Xpcn_3 = InputParsingHelpers.ParseDoubleOrDefault(test[6]);
+                    Pcn_1 = -double.Parse(test[1]);
+                    Xpcn_1 = double.Parse(test[2]);
+                    Pcn_2 = -double.Parse(test[3]);
+                    Xpcn_2 = double.Parse(test[4]);
+                    Pcn_3 = -double.Parse(test[5]);
+                    Xpcn_3 = double.Parse(test[6]);
 
-                    W0_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[7]);
-                    W1_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[8]);
-                    Xw0_1 = InputParsingHelpers.ParseDoubleOrDefault(test[9]);
-                    Xw1_1 = InputParsingHelpers.ParseDoubleOrDefault(test[10]);
+                    W0_1 = -double.Parse(test[7]);
+                    W1_1 = -double.Parse(test[8]);
+                    Xw0_1 = double.Parse(test[9]);
+                    Xw1_1 = double.Parse(test[10]);
 
-                    MCn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[11]);
-                    XMcn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[12]);
+                    MCn_1 = double.Parse(test[11]);
+                    XMcn_1 = double.Parse(test[12]);
 
                     Ydirection = test[13];
 
@@ -1507,7 +1507,7 @@ Local d=T*Global d                  |Global d= TT*d local
 
                             Inclied_Supp_Node_num = int.Parse(testx[0]);
 
-                            Inc_Supp_angle_base_AND_GX = InputParsingHelpers.ParseDoubleOrDefault(testx[2]);
+                            Inc_Supp_angle_base_AND_GX = double.Parse(testx[2]);
 
 
 
@@ -2798,20 +2798,20 @@ Local d=T*Global d                  |Global d= TT*d local
 
 
 
-                Pcn_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[1]);
-                Xpcn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[2]);
-                Pcn_2 = -InputParsingHelpers.ParseDoubleOrDefault(test[3]);
-                Xpcn_2 = InputParsingHelpers.ParseDoubleOrDefault(test[4]);
-                Pcn_3 = -InputParsingHelpers.ParseDoubleOrDefault(test[5]);
-                Xpcn_3 = InputParsingHelpers.ParseDoubleOrDefault(test[6]);
+                Pcn_1 = -double.Parse(test[1]);
+                Xpcn_1 = double.Parse(test[2]);
+                Pcn_2 = -double.Parse(test[3]);
+                Xpcn_2 = double.Parse(test[4]);
+                Pcn_3 = -double.Parse(test[5]);
+                Xpcn_3 = double.Parse(test[6]);
 
-                W0_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[7]);
-                W1_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[8]);
-                Xw0_1 = InputParsingHelpers.ParseDoubleOrDefault(test[9]);
-                Xw1_1 = InputParsingHelpers.ParseDoubleOrDefault(test[10]);
+                W0_1 = -double.Parse(test[7]);
+                W1_1 = -double.Parse(test[8]);
+                Xw0_1 = double.Parse(test[9]);
+                Xw1_1 = double.Parse(test[10]);
 
-                MCn_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[11]);
-                XMcn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[12]);
+                MCn_1 = -double.Parse(test[11]);
+                XMcn_1 = double.Parse(test[12]);
                 Ydirection = test[13];
 
 
@@ -3026,20 +3026,20 @@ Local d=T*Global d                  |Global d= TT*d local
 
 
 
-                Pcn_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[1]);
-                Xpcn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[2]);
-                Pcn_2 = -InputParsingHelpers.ParseDoubleOrDefault(test[3]);
-                Xpcn_2 = InputParsingHelpers.ParseDoubleOrDefault(test[4]);
-                Pcn_3 = -InputParsingHelpers.ParseDoubleOrDefault(test[5]);
-                Xpcn_3 = InputParsingHelpers.ParseDoubleOrDefault(test[6]);
+                Pcn_1 = -double.Parse(test[1]);
+                Xpcn_1 = double.Parse(test[2]);
+                Pcn_2 = -double.Parse(test[3]);
+                Xpcn_2 = double.Parse(test[4]);
+                Pcn_3 = -double.Parse(test[5]);
+                Xpcn_3 = double.Parse(test[6]);
 
-                W0_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[7]);
-                W1_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[8]);
-                Xw0_1 = InputParsingHelpers.ParseDoubleOrDefault(test[9]);
-                Xw1_1 = InputParsingHelpers.ParseDoubleOrDefault(test[10]);
+                W0_1 = -double.Parse(test[7]);
+                W1_1 = -double.Parse(test[8]);
+                Xw0_1 = double.Parse(test[9]);
+                Xw1_1 = double.Parse(test[10]);
 
-                MCn_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[11]);
-                XMcn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[12]);
+                MCn_1 = -double.Parse(test[11]);
+                XMcn_1 = double.Parse(test[12]);
                 Ydirection = test[13];
 
 
@@ -5875,9 +5875,9 @@ Local d=T*Global d                  |Global d= TT*d local
                             test = Mproperty_A_I_E[i].Split(new char[] { ',' });
 
 
-                            Ayz[i] = InputParsingHelpers.ParseDoubleOrDefault(test[1]);
-                            Iz[i] = InputParsingHelpers.ParseDoubleOrDefault(test[2]);
-                            Ey[i] = InputParsingHelpers.ParseDoubleOrDefault(test[3]);
+                            Ayz[i] = double.Parse(test[1]);
+                            Iz[i] = double.Parse(test[2]);
+                            Ey[i] = double.Parse(test[3]);
 
 
                         }
@@ -8063,20 +8063,20 @@ Local d=T*Global d                  |Global d= TT*d local
 
                 kk = int.Parse(test[0]);
 
-                Pcn_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[1]);
-                Xpcn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[2]);
-                Pcn_2 = -InputParsingHelpers.ParseDoubleOrDefault(test[3]);
-                Xpcn_2 = InputParsingHelpers.ParseDoubleOrDefault(test[4]);
-                Pcn_3 = -InputParsingHelpers.ParseDoubleOrDefault(test[5]);
-                Xpcn_3 = InputParsingHelpers.ParseDoubleOrDefault(test[6]);
+                Pcn_1 = -double.Parse(test[1]);
+                Xpcn_1 = double.Parse(test[2]);
+                Pcn_2 = -double.Parse(test[3]);
+                Xpcn_2 = double.Parse(test[4]);
+                Pcn_3 = -double.Parse(test[5]);
+                Xpcn_3 = double.Parse(test[6]);
 
-                W0_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[7]);
-                W1_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[8]);
-                Xw0_1 = InputParsingHelpers.ParseDoubleOrDefault(test[9]);
-                Xw1_1 = InputParsingHelpers.ParseDoubleOrDefault(test[10]);
+                W0_1 = -double.Parse(test[7]);
+                W1_1 = -double.Parse(test[8]);
+                Xw0_1 = double.Parse(test[9]);
+                Xw1_1 = double.Parse(test[10]);
 
-                MCn_1 = -InputParsingHelpers.ParseDoubleOrDefault(test[11]);
-                XMcn_1 = InputParsingHelpers.ParseDoubleOrDefault(test[12]);
+                MCn_1 = -double.Parse(test[11]);
+                XMcn_1 = double.Parse(test[12]);
                 Ydirection = test[13];
 
             }
@@ -10760,9 +10760,9 @@ Local d=T*Global d                  |Global d= TT*d local
 
                     }
                     k = int.Parse(test[0]);
-                    Pjx = InputParsingHelpers.ParseDoubleOrDefault(test[1]);
-                    Pjy = InputParsingHelpers.ParseDoubleOrDefault(test[2]);
-                    Mjzz = InputParsingHelpers.ParseDoubleOrDefault(test[3]);
+                    Pjx = double.Parse(test[1]);
+                    Pjy = double.Parse(test[2]);
+                    Mjzz = double.Parse(test[3]);
                     Flocal[0] = k;
                     Flocal[1] = Pjx;
                     Flocal[2] = Pjy;
@@ -13840,8 +13840,8 @@ Local d=T*Global d                  |Global d= TT*d local
                         //Debug.Print(i + "Support_Displacement_S test  =" + test9[i]);
                     }
 
-                    Support_Displacement_temp[j * 3 - 2] = InputParsingHelpers.ParseDoubleOrDefault(test9[1]);
-                    Support_Displacement_temp[j * 3 - 1] = InputParsingHelpers.ParseDoubleOrDefault(test9[2]);
+                    Support_Displacement_temp[j * 3 - 2] = double.Parse(test9[1]);
+                    Support_Displacement_temp[j * 3 - 1] = double.Parse(test9[2]);
                 }
             }
 
@@ -14988,11 +14988,11 @@ Local d=T*Global d                  |Global d= TT*d local
 
 
 
-                    Support_Displacement_temp[j * 3 - 2] = InputParsingHelpers.ParseDoubleOrDefault(test9[1]);
-                    Support_Displacement_temp[j * 3 - 1] = InputParsingHelpers.ParseDoubleOrDefault(test9[2]);
+                    Support_Displacement_temp[j * 3 - 2] = double.Parse(test9[1]);
+                    Support_Displacement_temp[j * 3 - 1] = double.Parse(test9[2]);
 
-                    //Debug.Print(j + ","+(j * 3 - 2)+ "Support_Displacement[j * 3 - 2]  =" + InputParsingHelpers.ParseDoubleOrDefault(test9[1]));
-                    //Debug.Print(j + "," + (j * 3 - 1) + "Support_Displacement[j * 3 - 1]  =" + InputParsingHelpers.ParseDoubleOrDefault(test9[2]));
+                    //Debug.Print(j + ","+(j * 3 - 2)+ "Support_Displacement[j * 3 - 2]  =" + double.Parse(test9[1]));
+                    //Debug.Print(j + "," + (j * 3 - 1) + "Support_Displacement[j * 3 - 1]  =" + double.Parse(test9[2]));
                 }
             }
 
@@ -19211,7 +19211,7 @@ M3,0.0225,4.21875E-05,200000000";
                     {
                         if (suptype[k] == 6)
                         {
-                            SPRING_Constant = InputParsingHelpers.ParseDoubleOrDefault(testx[2]);
+                            SPRING_Constant = double.Parse(testx[2]);
 
                         }
                     }
@@ -19228,7 +19228,7 @@ M3,0.0225,4.21875E-05,200000000";
                         {
                             Inclied_Supp_Node_num = int.Parse(testx[0]);
 
-                            Inc_Supp_angle_base_AND_GX = InputParsingHelpers.ParseDoubleOrDefault(testx[2]);
+                            Inc_Supp_angle_base_AND_GX = double.Parse(testx[2]);
 
 
                         }
