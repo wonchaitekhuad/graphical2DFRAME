@@ -32,6 +32,9 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 {
     public partial class Form1 : Form
     {
+        // Public event for coordinate submission
+        public event Action<double, double> CoordinatesSubmitted;
+
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +42,70 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
 
+        }
+        
+        // Event handler for coordinate submission
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            string xInput = txtX.Text.Trim();
+            string yInput = txtY.Text.Trim();
+            
+            double x, y;
+            bool xParsed = false;
+            bool yParsed = false;
+            
+            // Try to parse X coordinate with multiple strategies
+            // Strategy 1: Try with InvariantCulture (dot as decimal separator)
+            xParsed = double.TryParse(xInput, NumberStyles.Float, CultureInfo.InvariantCulture, out x);
+            
+            if (!xParsed)
+            {
+                // Strategy 2: Try with CurrentCulture
+                xParsed = double.TryParse(xInput, NumberStyles.Float, CultureInfo.CurrentCulture, out x);
+            }
+            
+            if (!xParsed && xInput.Contains(","))
+            {
+                // Strategy 3: Replace comma with dot and try again
+                string xInputWithDot = xInput.Replace(",", ".");
+                xParsed = double.TryParse(xInputWithDot, NumberStyles.Float, CultureInfo.InvariantCulture, out x);
+            }
+            
+            // Try to parse Y coordinate with multiple strategies
+            // Strategy 1: Try with InvariantCulture (dot as decimal separator)
+            yParsed = double.TryParse(yInput, NumberStyles.Float, CultureInfo.InvariantCulture, out y);
+            
+            if (!yParsed)
+            {
+                // Strategy 2: Try with CurrentCulture
+                yParsed = double.TryParse(yInput, NumberStyles.Float, CultureInfo.CurrentCulture, out y);
+            }
+            
+            if (!yParsed && yInput.Contains(","))
+            {
+                // Strategy 3: Replace comma with dot and try again
+                string yInputWithDot = yInput.Replace(",", ".");
+                yParsed = double.TryParse(yInputWithDot, NumberStyles.Float, CultureInfo.InvariantCulture, out y);
+            }
+            
+            // Check if both coordinates were successfully parsed
+            if (!xParsed || !yParsed)
+            {
+                // Show error message in Thai
+                MessageBox.Show(
+                    "กรุณากรอกพิกัด X และ Y ที่ถูกต้อง\nโปรดใช้ตัวเลขเท่านั้น เช่น 3.14 หรือ 3,14",
+                    "ข้อมูลไม่ถูกต้อง",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+            
+            // Display coordinates in lblResult
+            lblResult.Text = $"พิกัดที่กรอก: X = {x:F2}, Y = {y:F2}";
+            
+            // Raise the CoordinatesSubmitted event
+            CoordinatesSubmitted?.Invoke(x, y);
         }
         
         protected override void WndProc(ref Message m)

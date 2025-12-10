@@ -117,6 +117,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblXCoord = new System.Windows.Forms.Label();
+            this.lblYCoord = new System.Windows.Forms.Label();
+            this.txtX = new System.Windows.Forms.TextBox();
+            this.txtY = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblResult = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -886,11 +892,68 @@ namespace Graphical_2D_Frame_Analysis_CSharp
             this.label1.TabIndex = 51;
             this.label1.Text = "SCALE FACTOR";
             // 
+            // lblXCoord
+            // 
+            this.lblXCoord.AutoSize = true;
+            this.lblXCoord.Location = new System.Drawing.Point(700, 29);
+            this.lblXCoord.Name = "lblXCoord";
+            this.lblXCoord.Size = new System.Drawing.Size(74, 13);
+            this.lblXCoord.TabIndex = 52;
+            this.lblXCoord.Text = "X Coordinate:";
+            // 
+            // lblYCoord
+            // 
+            this.lblYCoord.AutoSize = true;
+            this.lblYCoord.Location = new System.Drawing.Point(700, 55);
+            this.lblYCoord.Name = "lblYCoord";
+            this.lblYCoord.Size = new System.Drawing.Size(74, 13);
+            this.lblYCoord.TabIndex = 53;
+            this.lblYCoord.Text = "Y Coordinate:";
+            // 
+            // txtX
+            // 
+            this.txtX.Location = new System.Drawing.Point(780, 26);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(100, 20);
+            this.txtX.TabIndex = 54;
+            // 
+            // txtY
+            // 
+            this.txtY.Location = new System.Drawing.Point(780, 52);
+            this.txtY.Name = "txtY";
+            this.txtY.Size = new System.Drawing.Size(100, 20);
+            this.txtY.TabIndex = 55;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(780, 78);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(100, 23);
+            this.btnSubmit.TabIndex = 56;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.ForeColor = System.Drawing.Color.Blue;
+            this.lblResult.Location = new System.Drawing.Point(700, 110);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 13);
+            this.lblResult.TabIndex = 57;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 461);
+            this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtY);
+            this.Controls.Add(this.txtX);
+            this.Controls.Add(this.lblYCoord);
+            this.Controls.Add(this.lblXCoord);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.ToolStrip1);
             this.Controls.Add(this.label1);
@@ -1016,6 +1079,12 @@ namespace Graphical_2D_Frame_Analysis_CSharp
         private Label label1;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aBOUTToolStripMenuItem;
+        private Label lblXCoord;
+        private Label lblYCoord;
+        private TextBox txtX;
+        private TextBox txtY;
+        private Button btnSubmit;
+        private Label lblResult;
     }
 }
 
